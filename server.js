@@ -6,6 +6,10 @@ const app = express();
 app.use(express.json({ extended: false }));
 
 app.get("/", (req, res) => {
+  res.jsonp("Heuyo!");
+});
+
+app.get("/translate", (req, res) => {
   translate(req.query.tr, { to: "en" })
     .then(data => {
       console.log(data);
