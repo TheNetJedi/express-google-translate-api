@@ -1,5 +1,6 @@
 const express = require("express");
 const translate = require("@vitalets/google-translate-api");
+const config = require("./config.json");
 
 const app = express();
 
@@ -10,10 +11,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/translate", (req, res) => {
-  translate(req.query.tr, { to: "en" })
+  translate(req.query.tr, { to: config.LANG })
     .then(data => {
-      console.log(data);
-
       res.jsonp({
         lang: data.from.language.iso,
         text: data.text
@@ -21,10 +20,14 @@ app.get("/translate", (req, res) => {
     })
     .catch(err => {
       console.error(err);
+      res.jsonp({
+        success: false,
+        error: err
+      });
     });
 });
 
-const port = process.env.PORT || 5000;
+const port = config.PORT || process.env.PORT || 5000;
 
 app.listen(port, () =>
   console.log(`Server running on http://localhost:${port}/`)
