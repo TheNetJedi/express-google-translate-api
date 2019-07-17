@@ -2,6 +2,5 @@
   "name": "Express Google Translate API",
   "description": "Express wrapper for Google Translate API",
   "repository": "https://github.com/TheNetJedi/express-google-translate-api",
-  "logo": "https://node-js-sample.herokuapp.com/node.png",
   "keywords": ["node", "express", "google", "translate", "api"]
 }

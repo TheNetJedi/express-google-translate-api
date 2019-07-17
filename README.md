@@ -2,6 +2,8 @@
 
 #### based on `google-translate-api` by @matheuss and `@vitalets/google-translate-api` by @vitalets
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 ## Installation
 
 Clone the repo:
