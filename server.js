@@ -27,7 +27,7 @@ app.get("/translate", (req, res) => {
     });
 });
 
-const port = config.PORT || process.env.PORT || 5000;
+const port = process.env.PORT || config.PORT || 5000;
 
 app.listen(port, () =>
   console.log(`Server running on http://localhost:${port}/`)
