@@ -1,10 +1,12 @@
 const express = require("express");
+const cors = require('cors');
 const translate = require("@vitalets/google-translate-api");
 const config = require("./config.json");
 
 const app = express();
 
 app.use(express.json({ extended: false }));
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.jsonp("Heuyo!");
