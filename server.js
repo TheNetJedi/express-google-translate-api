@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/translate", (req, res) => {
-  translate(req.query.tr, { to: config.LANG })
+  translate(req.query.tr, { to: req.query.to || config.LANG })
     .then(data => {
       res.jsonp({
         lang: data.from.language.iso,
