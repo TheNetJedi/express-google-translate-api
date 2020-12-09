@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require('cors');
-const translate = require("@vitalets/google-translate-api");
+const { translate } = require("google-translate-api-browser");
 const config = require("./config.json");
 
 const app = express();
