@@ -1,17 +1,19 @@
 const express = require("express");
-const translate = require("@vitalets/google-translate-api");
+const cors = require('cors');
+const { translate } = require("google-translate-api-browser");
 const config = require("./config.json");
 
 const app = express();
 
 app.use(express.json({ extended: false }));
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.jsonp("Heuyo!");
 });
 
 app.get("/translate", (req, res) => {
-  translate(req.query.tr, { to: config.LANG })
+  translate(req.query.tr, { to: req.query.to || config.LANG })
     .then(data => {
       res.jsonp({
         lang: data.from.language.iso,
