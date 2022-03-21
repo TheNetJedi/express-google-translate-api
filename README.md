@@ -8,7 +8,7 @@
 
 Clone the repo:
 
-`git clone https://github.com/hasanalibalcioglu/express-google-translate-api.git`
+`git clone https://github.com/h3xexe/express-google-translate-api.git`
 
 Install the dependencies: `npm i`
 
